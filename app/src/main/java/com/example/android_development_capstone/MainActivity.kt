@@ -69,7 +69,8 @@ fun MyApp(modifier: Modifier = Modifier) {
         NavHost(
             navController = nav,
             // makes the app start at the login screen
-            startDestination = "splashscreen"
+            //startDestination = "splashscreen"
+            startDestination = "home"
         ) {
             composable("onboarding") {
 
@@ -108,7 +109,7 @@ fun MyApp(modifier: Modifier = Modifier) {
             composable("splashscreen") { SplashScreen(nav) }
 
             // route for the home page
-            //composable("home") { Home(nav) }
+            composable("home") { Home(nav) }
 
 
 
