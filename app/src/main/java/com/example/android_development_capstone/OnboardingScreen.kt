@@ -68,11 +68,20 @@ fun OnboardingScreen(
                 Text(
                     text = "LeafLens",
                     fontWeight = FontWeight.Bold,
-                    fontSize = 56.sp,
-                    color = MaterialTheme.colorScheme.onBackground,
+                    fontSize = 66.sp,
+                    color = Color(0xFF2E7D32),
                     textAlign = TextAlign.Center,
 
-                    fontFamily = FontFamily(Font(R.font.nunito))
+                    fontFamily = FontFamily(Font(R.font.nunito_bold))
+
+                )
+
+                Text(
+                    text = "Identify plants and trees instantly!",
+                    fontSize = 16.sp,
+                    color = MaterialTheme.colorScheme.onSurface,
+                    textAlign = TextAlign.Center,
+
 
                 )
 
@@ -94,28 +103,28 @@ fun OnboardingScreen(
                     onClick = {
                         onContinueClicked() },
                     modifier = Modifier.fillMaxWidth(),
-                    border = BorderStroke(4.dp, MaterialTheme.colorScheme.primary),
+                    border = BorderStroke(4.dp, MaterialTheme.colorScheme.surface),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color.Transparent,
-                        contentColor = MaterialTheme.colorScheme.onPrimary
+                        contentColor = MaterialTheme.colorScheme.onBackground
                     )
                 ) {
-                    Text("Register")
+                    Text("Sign in")
                 }
 
                 OutlinedButton(
                     onClick = {
                         onRegisterClicked() },
                     modifier = Modifier.fillMaxWidth(),
-                    border = BorderStroke(4.dp, MaterialTheme.colorScheme.primary),
+                    border = BorderStroke(4.dp, MaterialTheme.colorScheme.surface),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color.Transparent
                     )
 
                 ) {
                     Text(
-                        "Sign in",
-                        color = MaterialTheme.colorScheme.onPrimary
+                        "Register",
+                        color = MaterialTheme.colorScheme.onBackground
                     )
                 }
 

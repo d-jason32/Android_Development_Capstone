@@ -52,12 +52,12 @@ fun SplashScreen(
 
                 // Make the font bold
                 fontWeight = FontWeight.Bold,
-                fontFamily = FontFamily(Font(R.font.nunito))
+                fontFamily = FontFamily(Font(R.font.nunito_bold))
 
             )
 
             Spacer(modifier = Modifier.height(10.dp))
-            
+
             // Add a picture of the logo
             PlantPicture()
 

@@ -99,10 +99,10 @@ fun MyApp(modifier: Modifier = Modifier) {
                 )
             }
             // Route for the login screen
-            //composable("login") { Login(nav) }
+            composable("login") { Login(nav) }
 
             // route for the register screen
-            //composable("register") { RegisterScreen(nav) }
+            composable("register") { RegisterScreen(nav) }
 
             // route for the splash screen
             composable("splashscreen") { SplashScreen(nav) }
