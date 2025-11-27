@@ -112,7 +112,7 @@ fun RegisterScreen(nav: NavHostController) {
                     ),
                     textStyle = TextStyle(
                         fontSize = 14.sp,
-                        color = Color.White
+                        color = Color.Black
                     ),
                     trailingIcon = {
                         Icon(
@@ -146,7 +146,7 @@ fun RegisterScreen(nav: NavHostController) {
                     ),
                     textStyle = TextStyle(
                         fontSize = 14.sp,
-                        color = Color.White
+                        color = Color.Black
                     ),
                     trailingIcon = {
                         Icon(
@@ -181,7 +181,7 @@ fun RegisterScreen(nav: NavHostController) {
                     ),
                     textStyle = TextStyle(
                         fontSize = 14.sp,
-                        color = Color.White
+                        color = Color.Black
                     ),
 
                     visualTransformation =

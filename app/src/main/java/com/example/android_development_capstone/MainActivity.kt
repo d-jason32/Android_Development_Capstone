@@ -69,8 +69,8 @@ fun MyApp(modifier: Modifier = Modifier) {
         NavHost(
             navController = nav,
             // makes the app start at the login screen
-            //startDestination = "splashscreen"
-            startDestination = "home"
+            startDestination = "splashscreen"
+            //startDestination = "home"
         ) {
             composable("onboarding") {
 

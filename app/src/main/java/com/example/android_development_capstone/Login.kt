@@ -138,7 +138,7 @@ fun Login(nav: NavHostController, modifier: Modifier = Modifier) {
                     ),
                     textStyle = TextStyle(
                         fontSize = 14.sp,
-                        color = Color.White
+                        color = Color.Black
                     ),
                     trailingIcon = {
                         Icon(
@@ -171,7 +171,7 @@ fun Login(nav: NavHostController, modifier: Modifier = Modifier) {
                     ),
                     textStyle = TextStyle(
                         fontSize = 14.sp,
-                        color = Color.White),
+                        color = Color.Black),
 
                     visualTransformation =
                         if (visible) VisualTransformation.None
