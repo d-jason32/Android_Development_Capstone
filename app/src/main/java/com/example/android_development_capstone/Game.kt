@@ -38,6 +38,8 @@ fun Game(nav: NavHostController, modifier: Modifier = Modifier) {
     Scaffold(
         containerColor = MaterialTheme.colorScheme.tertiary,
         modifier = Modifier.fillMaxSize(),
+        bottomBar = { BottomNavBar(nav) },
+
 
 
         ) { paddingValues ->

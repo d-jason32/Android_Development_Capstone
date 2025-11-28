@@ -18,6 +18,11 @@ import androidx.compose.material3.Surface
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
+import com.example.android_development_capstone.subject.SubjectScreen
+import com.example.android_development_capstone.question.QuestionScreen
+import com.example.android_development_capstone.question.AddQuestionScreen
+import com.example.android_development_capstone.question.EditQuestionScreen
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -122,6 +127,45 @@ fun MyApp(modifier: Modifier = Modifier, startDestination: String) {
             composable("home") { Home(nav) }
 
             composable("game") { Game(nav) }
+
+            composable("subjectscreen") { 
+                SubjectScreen(
+                    navController = nav,
+                    onSubjectClick = { subject ->
+                        nav.navigate(Routes.Question(subjectId = subject.id, showLastQuestion = false))
+                    }
+                )
+            }
+            
+            composable<Routes.Question> { backStackEntry ->
+                val route = backStackEntry.toRoute<Routes.Question>()
+                QuestionScreen(
+                    onUpClick = { nav.popBackStack() },
+                    onAddClick = { 
+                        nav.navigate(Routes.AddQuestion(subjectId = route.subjectId))
+                    },
+                    onEditClick = { questionId ->
+                        nav.navigate(Routes.EditQuestion(questionId = questionId))
+                    }
+                )
+            }
+            
+            composable<Routes.AddQuestion> { backStackEntry ->
+                val route = backStackEntry.toRoute<Routes.AddQuestion>()
+                AddQuestionScreen(
+                    onUpClick = { nav.popBackStack() },
+                    onSaveClick = { nav.popBackStack() }
+                )
+            }
+            
+            composable<Routes.EditQuestion> { backStackEntry ->
+                val route = backStackEntry.toRoute<Routes.EditQuestion>()
+                EditQuestionScreen(
+                    onUpClick = { nav.popBackStack() },
+                    onSaveClick = { nav.popBackStack() }
+                )
+            }
+
 
 
 

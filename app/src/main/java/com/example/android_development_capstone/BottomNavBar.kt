@@ -37,10 +37,10 @@ import com.example.android_development_capstone.ui.theme.Surface
 
 @Composable
 fun BottomNavBar(navController: NavHostController) {
-    val items = listOf("home", "search", "camera", "garden", "game")
+    val items = listOf("home", "search", "camera", "subjectscreen", "game")
     val icons = listOf(Icons.Outlined.Home, Icons.Outlined.Search, Icons.Outlined.Camera, Icons.Outlined.LocalFlorist, Icons.Outlined.SportsEsports)
 
-    val routes = listOf("home", "search", "camera", "garden", "game")
+    val routes = listOf("home", "search", "camera", "subjectscreen", "game")
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
