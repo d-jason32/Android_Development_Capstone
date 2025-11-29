@@ -16,11 +16,13 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.scaleIn
 import androidx.compose.animation.scaleOut
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.draganddrop.dragAndDropSource
 import androidx.compose.foundation.draganddrop.dragAndDropTarget
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.Image
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
@@ -35,9 +37,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ViewAgenda
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowForward
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.CameraAlt
+import androidx.compose.material.icons.filled.KeyboardArrowDown
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.ui.res.painterResource
 import com.example.android_development_capstone.R
 
@@ -46,14 +55,17 @@ import com.example.android_development_capstone.R
 fun Game1(modifier: Modifier = Modifier) {
     var isPlaying by remember { mutableStateOf(true) }
     var position by remember { mutableStateOf(IntOffset(300, 300)) }
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(modifier = Modifier
+        .fillMaxSize()
+        .background(MaterialTheme.colorScheme.primary)
+    ) {
 
         Row(
             modifier = modifier
                 .fillMaxWidth()
                 .weight(0.2f)
         ) {
-            val boxCount = 4
+            val boxCount = 5
             var dragBoxIndex by remember { mutableIntStateOf(0) }
 
             repeat(boxCount) { index ->
@@ -134,22 +146,97 @@ fun Game1(modifier: Modifier = Modifier) {
                     .size(100.dp)
             )
 
-            MyButton(
-                onReset = {
-                    position = IntOffset(400, 100)
-                    isPlaying = !isPlaying
-                }
-            )
+            Row(
+                modifier = Modifier
+                    .align(Alignment.BottomCenter)
+                    .padding(16.dp),
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+
+                Icon(
+                    imageVector = Icons.AutoMirrored.Filled.KeyboardArrowLeft,
+                    contentDescription = "Left",
+                    modifier = Modifier
+                        .size(48.dp)
+                        .dragAndDropSource { _ ->
+                            DragAndDropTransferData(
+                                clipData = ClipData.newPlainText("arrow", "left")
+                            )
+                        }
+                )
+
+                Icon(
+                    imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
+                    contentDescription = "Right",
+                    modifier = Modifier
+                        .size(48.dp)
+                        .dragAndDropSource { _ ->
+                            DragAndDropTransferData(
+                                clipData = ClipData.newPlainText("arrow", "right")
+                            )
+                        }
+                )
+
+                StartButton { }
+
+                ResetButton(
+                    onReset = {
+                        position = IntOffset(400, 100)
+                        isPlaying = !isPlaying
+                    }
+                )
+
+                Icon(
+                    imageVector = Icons.Filled.KeyboardArrowDown,
+                    contentDescription = "Down",
+                    modifier = Modifier
+                        .size(48.dp)
+                        .dragAndDropSource { _ ->
+                            DragAndDropTransferData(
+                                clipData = ClipData.newPlainText("arrow", "down")
+                            )
+                        }
+                )
+
+                Icon(
+                    imageVector = Icons.Filled.KeyboardArrowUp,
+                    contentDescription = "Up",
+                    modifier = Modifier
+                        .size(48.dp)
+                        .dragAndDropSource { _ ->
+                            DragAndDropTransferData(
+                                clipData = ClipData.newPlainText("arrow", "up")
+                            )
+                        }
+                )
+
+            }
         }
     }
 }
 
 @Composable
-fun MyButton(onReset: () -> Unit) {
+fun ResetButton(onReset: () -> Unit) {
     Button(
         onClick = onReset,
-        modifier = Modifier.padding(16.dp)
+        colors = ButtonDefaults.buttonColors(
+            containerColor = MaterialTheme.colorScheme.secondaryContainer,
+            contentColor = MaterialTheme.colorScheme.onSecondaryContainer
+        )
     ) {
-        Text("Reset object")
+        Text("Reset")
+    }
+}
+
+@Composable
+fun StartButton(onClick: () -> Unit) {
+    Button(
+        onClick = onClick,
+        colors = ButtonDefaults.buttonColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+        )
+    ) {
+        Text("Start")
     }
 }

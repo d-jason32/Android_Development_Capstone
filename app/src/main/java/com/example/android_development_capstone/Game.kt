@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -43,84 +45,67 @@ fun Game(nav: NavHostController, modifier: Modifier = Modifier) {
 
 
         ) { paddingValues ->
-        Box(
+        Column(
             modifier = Modifier
-                .fillMaxWidth()
+                .fillMaxSize()
                 .padding(paddingValues)
+                .verticalScroll(rememberScrollState()),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
+            Spacer(Modifier.height(16.dp))
 
-            Column(
-                modifier = Modifier
-                    .fillMaxSize(),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally,
-            ) {
+            Text(
+                "Choose a level!",
+                fontSize = 50.sp,
+                fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
+            )
 
-                Text(
-                    "Choose a level!",
-                    fontSize = 50.sp,
-                    fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
-                )
+            PlantPicture()
 
+            Spacer(Modifier.height(32.dp))
 
-                PlantPicture()
-
-
-                Spacer(Modifier.height(100.dp))
-
-
-            }
-            Column(
+            OutlinedButton(
+                onClick = {
+                    //SoundManager.play("click")
+                    nav.navigate("Game1")
+                },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .align(Alignment.BottomCenter),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(12.dp)
-            )
-            {
-                OutlinedButton(
-                    onClick = {
-                        //SoundManager.play("click")
-                        nav.navigate("Game1")
-                    },
-                    modifier = Modifier.fillMaxWidth()
-                        .padding(horizontal = 20.dp),
-                    border = BorderStroke(2.dp, MaterialTheme.colorScheme.onBackground,),
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = MaterialTheme.colorScheme.primaryContainer,
-                        contentColor = MaterialTheme.colorScheme.onPrimary
-                    )
-                ) {
-                    Text(
-                        "Easy",
-                        fontSize = 16.sp
-                    )
-                }
-
-                OutlinedButton(
-                    onClick = {
-                        //SoundManager.play("click")
-                        nav.navigate("onboarding4")
-                    },
-                    modifier = Modifier.fillMaxWidth()
-                        .padding(horizontal = 20.dp),
-                    border = BorderStroke(2.dp, MaterialTheme.colorScheme.onBackground,),
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = MaterialTheme.colorScheme.primaryContainer,
-                        contentColor = MaterialTheme.colorScheme.onPrimary
-                    )
-                ) {
-                    Text(
-                        "Hard",
-                        fontSize = 16.sp
-                    )
-                }
-
-
-                Spacer(Modifier.height(10.dp))
-
-
+                    .padding(horizontal = 20.dp),
+                border = BorderStroke(2.dp, MaterialTheme.colorScheme.onBackground),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer,
+                    contentColor = MaterialTheme.colorScheme.onPrimary
+                )
+            ) {
+                Text(
+                    "Easy",
+                    fontSize = 16.sp
+                )
             }
+
+            OutlinedButton(
+                onClick = {
+                    //SoundManager.play("click")
+                    nav.navigate("onboarding4")
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 20.dp),
+                border = BorderStroke(2.dp, MaterialTheme.colorScheme.onBackground),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer,
+                    contentColor = MaterialTheme.colorScheme.onPrimary
+                )
+            ) {
+                Text(
+                    "Hard",
+                    fontSize = 16.sp
+                )
+            }
+
+            Spacer(Modifier.height(16.dp))
         }
     }
 }
