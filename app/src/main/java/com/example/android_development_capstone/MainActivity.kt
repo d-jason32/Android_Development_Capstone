@@ -20,6 +20,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.example.android_development_capstone.game.Congrats1_2
+import com.example.android_development_capstone.game.Congrats2_3
+import com.example.android_development_capstone.game.Won
 import com.example.android_development_capstone.game.Game1
 import com.example.android_development_capstone.game.Game2
 import com.example.android_development_capstone.game.Game3
@@ -140,17 +142,25 @@ fun MyApp(modifier: Modifier = Modifier, startDestination: String) {
 
             composable("Game2") {
                 Game2(
-                    onWin = { nav.navigate("Congrats1_2") }
+                    onWin = { nav.navigate("Congrats2_3") }
                 )
             }
-            
-            composable("Congrats1_2") { Congrats1_2(nav) }
-            
+
             composable("Game3") {
                 Game3(
-                    onWin = { nav.navigate("home") }  // Final level - go home on win
+                    onWin = { nav.navigate("won") }
                 )
             }
+
+            composable("Congrats1_2") { Congrats1_2(nav) }
+
+            composable("Congrats2_3") { Congrats2_3(nav) }
+            
+            composable("won") { Won(nav) }
+
+
+
+
 
 
             composable("subjectscreen") { 
