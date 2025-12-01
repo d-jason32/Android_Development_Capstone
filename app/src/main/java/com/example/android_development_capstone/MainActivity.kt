@@ -22,6 +22,7 @@ import androidx.navigation.toRoute
 import com.example.android_development_capstone.game.Congrats1_2
 import com.example.android_development_capstone.game.Game1
 import com.example.android_development_capstone.game.Game2
+import com.example.android_development_capstone.game.Game3
 import com.example.android_development_capstone.subject.SubjectScreen
 import com.example.android_development_capstone.question.QuestionScreen
 import com.example.android_development_capstone.question.AddQuestionScreen
@@ -144,6 +145,12 @@ fun MyApp(modifier: Modifier = Modifier, startDestination: String) {
             }
             
             composable("Congrats1_2") { Congrats1_2(nav) }
+            
+            composable("Game3") {
+                Game3(
+                    onWin = { nav.navigate("home") }  // Final level - go home on win
+                )
+            }
 
 
             composable("subjectscreen") { 
