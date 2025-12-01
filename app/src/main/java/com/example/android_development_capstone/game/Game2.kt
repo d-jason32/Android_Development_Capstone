@@ -103,7 +103,7 @@ fun Game2(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
     ) {
         // Command area - one large rectangle
         Text(
-            text = "Drag arrows here:",
+            text = "Game 2",
             color = MaterialTheme.colorScheme.onPrimary,
             modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
         )
