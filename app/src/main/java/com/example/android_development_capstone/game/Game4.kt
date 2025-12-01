@@ -31,7 +31,9 @@ import androidx.compose.ui.draganddrop.DragAndDropTransferData
 import androidx.compose.ui.draganddrop.mimeTypes
 import androidx.compose.ui.draganddrop.toAndroidDragEvent
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import androidx.compose.material.icons.Icons
@@ -89,6 +91,8 @@ fun Game4(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
         Text(
             text = "Game 4",
             color = MaterialTheme.colorScheme.onPrimary,
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
         )
 
@@ -97,8 +101,8 @@ fun Game4(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp)
                 .height(56.dp)
-                .border(2.dp, MaterialTheme.colorScheme.onPrimary)
-                .background(MaterialTheme.colorScheme.primaryContainer)
+                .border(2.dp, MaterialTheme.colorScheme.onBackground)
+                .background(MaterialTheme.colorScheme.surface)
                 .dragAndDropTarget(
                     shouldStartDragAndDrop = { event ->
                         event.mimeTypes().contains(ClipDescription.MIMETYPE_TEXT_PLAIN)

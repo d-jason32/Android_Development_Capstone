@@ -46,7 +46,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         auth = Firebase.auth
         val currentUser = auth.currentUser
-        val startDestination = "home"
+        val startDestination = "splashscreen"
         SoundManager.init(this)
 
         setContent {

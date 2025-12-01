@@ -34,6 +34,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import androidx.compose.material.icons.Icons
@@ -96,7 +97,7 @@ fun Game2(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.primary)
+            .background(MaterialTheme.colorScheme.secondary)
             .verticalScroll(rememberScrollState())
             .padding(vertical = 8.dp),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -104,7 +105,9 @@ fun Game2(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
         // Command area - one large rectangle
         Text(
             text = "Game 2",
-            color = MaterialTheme.colorScheme.onPrimary,
+            color = MaterialTheme.colorScheme.onSecondary,
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
         )
 
@@ -113,8 +116,8 @@ fun Game2(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp)
                 .height(56.dp)
-                .border(2.dp, MaterialTheme.colorScheme.onPrimary)
-                .background(MaterialTheme.colorScheme.primaryContainer)
+                .border(2.dp, MaterialTheme.colorScheme.onBackground)
+                .background(MaterialTheme.colorScheme.surface)
                 .dragAndDropTarget(
                     shouldStartDragAndDrop = { event ->
                         event.mimeTypes().contains(ClipDescription.MIMETYPE_TEXT_PLAIN)
@@ -155,7 +158,7 @@ fun Game2(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                                         clipData = ClipData.newPlainText("arrow", arrowType)
                                     )
                                 },
-                            tint = MaterialTheme.colorScheme.onPrimaryContainer
+                            tint = MaterialTheme.colorScheme.onSecondaryContainer
                         )
                     }
                 }
@@ -164,7 +167,7 @@ fun Game2(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                 if (commands.isEmpty()) {
                     Text(
                         text = "Drop arrows here...",
-                        color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.5f),
+                        color = MaterialTheme.colorScheme.onSecondaryContainer.copy(alpha = 0.5f),
                         modifier = Modifier.padding(start = 8.dp)
                     )
                 }
@@ -262,7 +265,7 @@ fun Game2(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                 // Arrow buttons to drag
                 Text(
                     text = "Drag arrows:",
-                    color = MaterialTheme.colorScheme.onPrimary
+                    color = MaterialTheme.colorScheme.onSecondary
                 )
 
                 Row(
@@ -272,7 +275,7 @@ fun Game2(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.KeyboardArrowLeft,
                         contentDescription = "Left",
-                        tint = MaterialTheme.colorScheme.onPrimary,
+                        tint = MaterialTheme.colorScheme.onSecondary,
                         modifier = Modifier
                             .size(36.dp)
                             .dragAndDropSource { _ ->
@@ -286,7 +289,7 @@ fun Game2(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                         Icon(
                             imageVector = Icons.Filled.KeyboardArrowUp,
                             contentDescription = "Up",
-                            tint = MaterialTheme.colorScheme.onPrimary,
+                            tint = MaterialTheme.colorScheme.onSecondary,
                             modifier = Modifier
                                 .size(36.dp)
                                 .dragAndDropSource { _ ->
@@ -298,7 +301,7 @@ fun Game2(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                         Icon(
                             imageVector = Icons.Filled.KeyboardArrowDown,
                             contentDescription = "Down",
-                            tint = MaterialTheme.colorScheme.onPrimary,
+                            tint = MaterialTheme.colorScheme.onSecondary,
                             modifier = Modifier
                                 .size(36.dp)
                                 .dragAndDropSource { _ ->
@@ -312,7 +315,7 @@ fun Game2(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
                         contentDescription = "Right",
-                        tint = MaterialTheme.colorScheme.onPrimary,
+                        tint = MaterialTheme.colorScheme.onSecondary,
                         modifier = Modifier
                             .size(36.dp)
                             .dragAndDropSource { _ ->

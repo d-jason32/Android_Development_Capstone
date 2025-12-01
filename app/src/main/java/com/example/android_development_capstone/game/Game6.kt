@@ -31,7 +31,9 @@ import androidx.compose.ui.draganddrop.DragAndDropTransferData
 import androidx.compose.ui.draganddrop.mimeTypes
 import androidx.compose.ui.draganddrop.toAndroidDragEvent
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import androidx.compose.material.icons.Icons
@@ -86,14 +88,16 @@ fun Game6(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.primary)
+            .background(MaterialTheme.colorScheme.background)
             .verticalScroll(rememberScrollState())
             .padding(vertical = 8.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
             text = "Game 6",
-            color = MaterialTheme.colorScheme.onPrimary,
+            color = MaterialTheme.colorScheme.onBackground,
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
         )
 
@@ -102,8 +106,8 @@ fun Game6(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp)
                 .height(56.dp)
-                .border(2.dp, MaterialTheme.colorScheme.onPrimary)
-                .background(MaterialTheme.colorScheme.primaryContainer)
+                .border(2.dp, MaterialTheme.colorScheme.onBackground)
+                .background(MaterialTheme.colorScheme.surface)
                 .dragAndDropTarget(
                     shouldStartDragAndDrop = { event ->
                         event.mimeTypes().contains(ClipDescription.MIMETYPE_TEXT_PLAIN)
@@ -134,14 +138,14 @@ fun Game6(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                             modifier = Modifier.size(40.dp).dragAndDropSource { _ ->
                                 DragAndDropTransferData(clipData = ClipData.newPlainText("arrow", arrowType))
                             },
-                            tint = MaterialTheme.colorScheme.onPrimaryContainer
+                            tint = MaterialTheme.colorScheme.onSurface
                         )
                     }
                 }
                 if (commands.isEmpty()) {
                     Text(
                         text = "Drop arrows here...",
-                        color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.5f),
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f),
                         modifier = Modifier.padding(start = 8.dp)
                     )
                 }
@@ -213,13 +217,13 @@ fun Game6(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                Text(text = "Drag arrows:", color = MaterialTheme.colorScheme.onPrimary)
+                Text(text = "Drag arrows:", color = MaterialTheme.colorScheme.onBackground)
 
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.KeyboardArrowLeft,
                         contentDescription = "Left",
-                        tint = MaterialTheme.colorScheme.onPrimary,
+                        tint = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier.size(36.dp).dragAndDropSource { _ ->
                             DragAndDropTransferData(clipData = ClipData.newPlainText("arrow", "left"))
                         }
@@ -229,7 +233,7 @@ fun Game6(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                         Icon(
                             imageVector = Icons.Filled.KeyboardArrowUp,
                             contentDescription = "Up",
-                            tint = MaterialTheme.colorScheme.onPrimary,
+                            tint = MaterialTheme.colorScheme.onBackground,
                             modifier = Modifier.size(36.dp).dragAndDropSource { _ ->
                                 DragAndDropTransferData(clipData = ClipData.newPlainText("arrow", "up"))
                             }
@@ -237,7 +241,7 @@ fun Game6(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                         Icon(
                             imageVector = Icons.Filled.KeyboardArrowDown,
                             contentDescription = "Down",
-                            tint = MaterialTheme.colorScheme.onPrimary,
+                            tint = MaterialTheme.colorScheme.onBackground,
                             modifier = Modifier.size(36.dp).dragAndDropSource { _ ->
                                 DragAndDropTransferData(clipData = ClipData.newPlainText("arrow", "down"))
                             }
@@ -247,7 +251,7 @@ fun Game6(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
                         contentDescription = "Right",
-                        tint = MaterialTheme.colorScheme.onPrimary,
+                        tint = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier.size(36.dp).dragAndDropSource { _ ->
                             DragAndDropTransferData(clipData = ClipData.newPlainText("arrow", "right"))
                         }

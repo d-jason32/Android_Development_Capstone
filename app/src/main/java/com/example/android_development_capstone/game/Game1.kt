@@ -91,10 +91,12 @@ fun Game1(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
             .padding(vertical = 8.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Command area - one large rectangle
+        // Title
         Text(
             text = "Game 1",
             color = MaterialTheme.colorScheme.onPrimary,
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
         )
         
@@ -103,8 +105,8 @@ fun Game1(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp)
                 .height(56.dp)
-                .border(2.dp, MaterialTheme.colorScheme.onPrimary)
-                .background(MaterialTheme.colorScheme.primaryContainer)
+                .border(2.dp, MaterialTheme.colorScheme.onBackground)
+                .background(MaterialTheme.colorScheme.surface)
                 .dragAndDropTarget(
                     shouldStartDragAndDrop = { event ->
                         event.mimeTypes().contains(ClipDescription.MIMETYPE_TEXT_PLAIN)
@@ -145,7 +147,7 @@ fun Game1(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                                         clipData = ClipData.newPlainText("arrow", arrowType)
                                     )
                                 },
-                            tint = MaterialTheme.colorScheme.onPrimaryContainer
+                                tint = MaterialTheme.colorScheme.onSurface
                         )
                     }
                 }
@@ -154,7 +156,7 @@ fun Game1(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                 if (commands.isEmpty()) {
                     Text(
                         text = "Drop arrows here...",
-                        color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.5f),
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f),
                         modifier = Modifier.padding(start = 8.dp)
                     )
                 }
@@ -240,7 +242,8 @@ fun Game1(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
                 // Arrow buttons to drag
                 Text(
                     text = "Drag arrows:",
-                    color = MaterialTheme.colorScheme.onPrimary
+                    color = MaterialTheme.colorScheme.onPrimary,
+                    fontWeight = FontWeight.Bold
                 )
                 
                 Row(

@@ -15,14 +15,26 @@ import androidx.compose.ui.platform.LocalContext
 
 val Primary = Color(0xFFA7C7E7)
 val OnPrimary = Color(0xFF1A1A1A)
+val PrimaryContainer = Color(0xFFD4E4F4)
+val OnPrimaryContainer = Color(0xFF1A1A1A)
+
 val Secondary = Color(0xFFB5EAEA)
 val OnSecondary = Color(0xFF1A1A1A)
+val SecondaryContainer = Color(0xFFDAF5F5)
+val OnSecondaryContainer = Color(0xFF1A1A1A)
+
 val Tertiary = Color(0xFFFFEBA1)
 val OnTertiary = Color(0xFF1A1A1A)
+val TertiaryContainer = Color(0xFFFFF5D0)
+val OnTertiaryContainer = Color(0xFF1A1A1A)
+
 val Background = Color(0xFFD6ECFF)
 val OnBackground = Color(0xFF1A1A1A)
+
 val Surface = Color(0xFFFFFFFF)
 val OnSurface = Color(0xFF1A1A1A)
+val SurfaceVariant = Color(0xFFE8F4FF)
+val OnSurfaceVariant = Color(0xFF1A1A1A)
 
 
 
@@ -36,24 +48,22 @@ private val DarkColorScheme = darkColorScheme(
 private val LightColorScheme = lightColorScheme(
     primary = Primary,
     onPrimary = OnPrimary,
+    primaryContainer = PrimaryContainer,
+    onPrimaryContainer = OnPrimaryContainer,
     secondary = Secondary,
     onSecondary = OnSecondary,
+    secondaryContainer = SecondaryContainer,
+    onSecondaryContainer = OnSecondaryContainer,
     tertiary = Tertiary,
     onTertiary = OnTertiary,
+    tertiaryContainer = TertiaryContainer,
+    onTertiaryContainer = OnTertiaryContainer,
     background = Background,
     onBackground = OnBackground,
     surface = Surface,
-    onSurface = OnSurface
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    onSurface = OnSurface,
+    surfaceVariant = SurfaceVariant,
+    onSurfaceVariant = OnSurfaceVariant
 )
 
 @Composable
