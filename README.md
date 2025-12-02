@@ -30,6 +30,15 @@
 ![License](https://img.shields.io/github/license/d-jason32/LeafLens)
 </div>
 
+🌿 Features
+
+Botany Study Guide – Learn plant anatomy, classification, and key concepts through a simplified, structured guide.
+
+Educational Plant Game – Interactive quizzes and plant-matching challenges to reinforce learning in a fun way.
+
+Real-Time AI Plant Tutor – Ask questions about plants and get instant, adaptive explanations powered by AI.
+
+TensorFlow Lite Plant Identification – On-device machine learning that identifies plants in real time using a TFLite model.
 
 
 ## 📚 Table of Contents
@@ -46,6 +55,7 @@
 ## 💬 Introduction
 
 ## 🚀 Features
+
 
 ### Coding Game
 1. Create accounts using Firebase
