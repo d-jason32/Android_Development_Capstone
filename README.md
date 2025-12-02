@@ -17,7 +17,7 @@
 
 
 <p align="center">
-  A full-stack mobile app for learning about plants!
+  A full-stack machine learning mobile app for learning about botany!
 </p>
 
 <div align="center">
