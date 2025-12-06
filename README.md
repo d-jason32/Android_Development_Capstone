@@ -82,6 +82,7 @@
 ## ▶️ Pictures
 ### Educational Plant Game
 ![img.png](img.png)
+<img src="img.png" width="300">
 ![img_1.png](img_1.png)
 ![img_2.png](img_2.png)
 ![img_3.png](img_3.png)
