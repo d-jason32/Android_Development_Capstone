@@ -40,7 +40,7 @@ fun BottomNavBar(navController: NavHostController) {
     val items = listOf("home", "search", "camera", "subjectscreen", "game")
     val icons = listOf(Icons.Outlined.Home, Icons.Outlined.Search, Icons.Outlined.Camera, Icons.Outlined.LocalFlorist, Icons.Outlined.SportsEsports)
 
-    val routes = listOf("home", "Game6", "camera", "subjectscreen", "game")
+    val routes = listOf("home", "", "camera", "subjectscreen", "game")
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
