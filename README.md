@@ -17,7 +17,7 @@
 
 
 <p align="center">
-  A full-stack machine learning mobile app for learning about botany!
+  A full-stack mobile app for learning about botany!
 </p>
 
 <div align="center">
@@ -25,8 +25,6 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/d-jason32/LeafLens)
 ![GitHub stars](https://img.shields.io/github/stars/d-jason32/LeafLens)
 ![GitHub issues](https://img.shields.io/github/issues/d-jason32/LeafLens)
-![GitHub pull requests](https://img.shields.io/github/d-jason32/LeafLens)
-![GitHub last commit](https://img.shields.io/github/d-jason32/LeafLens)
 ![License](https://img.shields.io/github/license/d-jason32/LeafLens)
 </div>
 
@@ -38,7 +36,6 @@
 
 ### Real-Time AI Plant Tutor
 
-### TensorFlow Lite Plant Identification 
 
 
 ## 📚 Table of Contents
@@ -60,20 +57,17 @@
 ### Educational Plant Game
 1. Create accounts using Firebase
 2. Two different levels: easy and hard.
-3. Each game has 4 commands: move up, move down, move left, move right.
-4. Audio playback
+3. Each game has 4 commands: move up, move down, move left, move right
+4. Audio playback and sound effects.
 5. Drag and drop
 6. Handling success and reattempt
 7. Creating sessions for the game players
-8. Using Files to register player progress in a file
-9. Third party API to show progress in a parent report
-10. Works on phone and tablets
+8. Works on phone and tablets
+9. Cartoon graphics and sound bubbles
 
-[Watch Educational Plant Game Video](https://youtu.be/yourvideo)
+[INSERT Watch Educational Plant Game Video](https://youtu.be/yourvideo)
 
 ### Botany Study Guide
-
-### Educational Plant Game
 
 ### Real-Time AI Plant Tutor
 
