@@ -55,6 +55,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import com.example.android_development_capstone.R
+import com.example.android_development_capstone.SoundManager
 
 
 @Composable
@@ -352,7 +353,10 @@ fun Game1(modifier: Modifier = Modifier, onWin: () -> Unit = {}) {
 @Composable
 fun ResetButton(onReset: () -> Unit) {
     Button(
-        onClick = onReset,
+        onClick = {
+            SoundManager.play("button")
+            onReset()
+        },
         colors = ButtonDefaults.buttonColors(
             containerColor = MaterialTheme.colorScheme.secondaryContainer,
             contentColor = MaterialTheme.colorScheme.onSecondaryContainer
@@ -365,7 +369,10 @@ fun ResetButton(onReset: () -> Unit) {
 @Composable
 fun StartButton(enabled: Boolean = true, onClick: () -> Unit) {
     Button(
-        onClick = onClick,
+        onClick = {
+            SoundManager.play("button")
+            onClick()
+        },
         enabled = enabled,
         colors = ButtonDefaults.buttonColors(
             containerColor = MaterialTheme.colorScheme.primaryContainer,

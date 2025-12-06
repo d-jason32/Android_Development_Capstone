@@ -50,7 +50,7 @@ fun Game(nav: NavHostController, modifier: Modifier = Modifier) {
                 .fillMaxSize()
                 .padding(paddingValues)
                 .verticalScroll(rememberScrollState()),
-            verticalArrangement = Arrangement.spacedBy(16.dp),
+            verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Spacer(Modifier.height(16.dp))
@@ -67,7 +67,7 @@ fun Game(nav: NavHostController, modifier: Modifier = Modifier) {
 
             OutlinedButton(
                 onClick = {
-                    //SoundManager.play("click")
+                    SoundManager.play("button")
                     nav.navigate("Game1")
                 },
                 modifier = Modifier
@@ -87,7 +87,7 @@ fun Game(nav: NavHostController, modifier: Modifier = Modifier) {
 
             OutlinedButton(
                 onClick = {
-                    //SoundManager.play("click")
+                    SoundManager.play("button")
                     nav.navigate("Game4")
                 },
                 modifier = Modifier

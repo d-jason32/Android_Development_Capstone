@@ -60,7 +60,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import android.app.Activity
+import android.content.pm.ActivityInfo
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.lint.kotlin.metadata.Visibility
 import com.google.firebase.Firebase
@@ -79,6 +81,14 @@ fun Login(nav: NavHostController, modifier: Modifier = Modifier) {
 
     val activity = context as Activity
     val scope = rememberCoroutineScope()
+
+    DisposableEffect(Unit) {
+        val activity = context as? Activity
+        activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        onDispose {
+            activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+        }
+    }
 
 
 

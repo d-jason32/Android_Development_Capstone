@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -20,6 +22,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -34,24 +37,21 @@ import com.example.android_development_capstone.BottomNavBar
 import com.example.android_development_capstone.NiceJob
 import com.example.android_development_capstone.PlantPicture
 import com.example.android_development_capstone.R
+import com.example.android_development_capstone.SoundManager
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
+import kotlinx.coroutines.delay
 
 @Composable
 fun Congrats4_5(nav: NavHostController, modifier: Modifier = Modifier) {
-    val context = LocalContext.current
-    DisposableEffect(Unit) {
-        val activity = context as? Activity
-        activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-        onDispose {
-            activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
-        }
+    LaunchedEffect(Unit) {
+        delay(1000)
+        SoundManager.play("wow")
     }
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.secondary,
         modifier = Modifier.fillMaxSize(),
-        bottomBar = { BottomNavBar(nav) },
 
 
         ) { paddingValues ->
@@ -63,7 +63,8 @@ fun Congrats4_5(nav: NavHostController, modifier: Modifier = Modifier) {
 
             Column(
                 modifier = Modifier
-                    .fillMaxSize(),
+                    .fillMaxSize()
+                    .verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
@@ -82,6 +83,7 @@ fun Congrats4_5(nav: NavHostController, modifier: Modifier = Modifier) {
 
                 OutlinedButton(
                     onClick = {
+                        SoundManager.play("button")
                         nav.navigate("Game5")
                     },
                     modifier = Modifier.fillMaxWidth()

@@ -91,6 +91,7 @@ fun Won(nav: NavHostController, modifier: Modifier = Modifier) {
 
                 OutlinedButton(
                     onClick = {
+                        SoundManager.play("button")
                         nav.navigate("home") {
                             popUpTo(nav.graph.findStartDestination().id) {
                                 inclusive = true
