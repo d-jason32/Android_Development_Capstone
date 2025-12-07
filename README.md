@@ -65,7 +65,7 @@
 8. Works on phone and tablets
 9. Cartoon graphics and sound bubbles
 
-[INSERT Watch Educational Plant Game Video](https://youtu.be/yourvideo)
+[Watch Educational Plant Game Video](https://youtu.be/wsfKHGA955Q)
 
 ### Botany Study Guide
 
