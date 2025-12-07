@@ -38,7 +38,7 @@
 
 ### Educational Plant Game 
 
-### Real-Time AI Plant Tutor
+### Real-Time AI Plant Identifier
 
 ### Trading Cards with Animations
 
@@ -61,9 +61,12 @@ LeafLens is an innovative mobile application designed to educate users about bot
 
 ## 🚀 Features
 
+### Account Creation and Authentication
+1. Users can create an account using email and password.
+2. Firebase Authentication is used to manage user accounts securely.
 
 ### Educational Plant Game
-1. Create accounts using Firebase
+1. Click into the plant game in the bottom navigation bar
 2. Two different levels: easy and hard.
 3. Each game has 4 commands: move up, move down, move left, move right
 4. Audio playback and sound effects.
@@ -130,6 +133,10 @@ LeafLens is an innovative mobile application designed to educate users about bot
   <img src="readme_pics/cards_gif.gif" width="300"/>
 </p>
 
+### Botany Study Guide
+<img src="readme_pics/study1.png" width="300">
+<img src="readme_pics/study2.png" width="300">
+<img src="readme_pics/study3.png" width="300">
 
 ## 🧰 Tech Stack
 
