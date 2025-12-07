@@ -74,11 +74,13 @@
 ### TensorFlow Lite Plant Identification
 
 ## ▶️ Pictures
-### Splash Screen/ Login / Register 
+### Splash Screen/ Login / Register with Firebase
 <img src="readme_pics/splash.png" width="300">
 <img src="readme_pics/intro.png" width="300">
 <img src="readme_pics/sign_in.png" width="300">
 <img src="readme_pics/signup.png" width="300">
+<img src="readme_pics/home.png" width="300">
+
 
 
 ### Educational Plant Game
