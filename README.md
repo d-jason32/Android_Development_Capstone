@@ -37,6 +37,7 @@
 ### Botany Study Guide 
 
 ### Educational Plant Game with Sound Effects and Drag-and-Drop
+[Watch Educational Plant Game Video](https://youtu.be/wsfKHGA955Q)
 
 ### Real-Time AI Plant Identifier
 
@@ -166,7 +167,7 @@ LeafLens is an innovative mobile application designed to educate users about bot
    - Yes, LeafLens uses Firebase Authentication to ensure user data is securely managed.
 
 ## 📄Documentation
-[View the Documentation ???Insert Documentation](https://google.com)
+[View the Documentation](https://docs.google.com/document/d/1UuaotuVslergmct_MZ74u_6bDnCD9TQdT3_MIBnCQ4I/edit?usp=sharing)
 
 ## 🙏 Acknowledgments
 - Special thanks to **Dr. Moaath Alrajab** for his guidance and support throughout the development of this project.
