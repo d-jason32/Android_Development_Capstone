@@ -36,7 +36,7 @@
 
 ### Botany Study Guide 
 
-### Educational Plant Game 
+### Educational Plant Game with Sound Effects and Drag-and-Drop
 
 ### Real-Time AI Plant Identifier
 
