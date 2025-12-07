@@ -104,6 +104,10 @@
 <img src="readme_pics/plantpic.png" width="300">
 <img src="readme_pics/apiresponse.png" width="300">
 
+### Plant Trading Cards with Animations
+![Demo](readme_pics/cards_gif.gif)
+
+
 ## 🧰 Tech Stack
 
 
